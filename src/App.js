@@ -35,7 +35,7 @@ class App extends Component {
     const renderMovies = this.state.movies
         .filter(m => m.title.toLowerCase().includes(this.state.filter.toLowerCase()))
         .map((movie, index) =>
-        <div className={`${movie.id === this.state.currentMovie ? 'moviePreview selected' : 'moviePreview' }`}
+        <div className={`${this.state.currentMovie !== null && movie.id === this.state.currentMovie.id ? 'moviePreview selected' : 'moviePreview' }`}
              key={index}
              onClick={() => this.handleClick(movie)}>
             <div className="moviePreviewHeader">
@@ -43,11 +43,7 @@ class App extends Component {
                 <p>{movie.dateRelease}</p>
             </div>
             <div>
-                <img className={`${movie.id === this.state.currentMovie ? 'greyScale' : '' }`} src={movie.poster}/>
-                <button
-                    onClick={() => this.handleEdit(movie)}
-                    className={`${movie.id === this.state.currentMovie ? 'btn' : 'btn hide' }`}
-                >Edit</button>
+                <img className={`${this.state.currentMovie !== null && movie.id === this.state.currentMovie.id ? 'greyScale' : '' }`} src={movie.poster}/>
             </div>
         </div>);
 
@@ -57,38 +53,39 @@ class App extends Component {
         <div className="wrapper">
             <Preview handleRenderMovies={renderMovies}/>
             <div className="infoMovie">
-                <p>Info Movies</p>
+                {this.state.currentMovie && renderMovieInfo(this.state.currentMovie)}
             </div>
+
         </div>
       </div>
     );
   }
 
     handleClick = (movie) => {
-        this.state.currentMovie === movie.id ? this.setState({currentMovie: null}) :
-        this.setState({currentMovie: movie.id})
-        document.querySelector('.infoMovie').innerHTML = `
-        <h3>${movie.title}</h3>
-        <p>${movie.dateRelease}</p>
-        <p>${movie.description}</p>
-        `
+
+            console.log('handleClick')
+        this.state.currentMovie &&
+        this.state.currentMovie.id === movie.id
+        ?
+        this.setState({currentMovie: null})
+        :
+        this.setState({currentMovie: movie})
+
     }
-    handleEdit = (movie) => {
-        console.log(movie)
-        document.querySelector('.infoMovie').innerHTML = `
-        <form>
-          <label>
-            Title:
-            <input type="text" name="title" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        `
-    }
+
+
 
 
 
 }
+
+const renderMovieInfo = (movie) =>
+    <React.Fragment>
+        <h3>{movie.title}</h3>
+        <p>{movie.dateRelease}</p>
+        <p>{movie.description}</p>
+    </React.Fragment>
+
 
 export default App;
 
