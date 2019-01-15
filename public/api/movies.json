@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "poster": "https://picsum.photos/200/250",
+    "dateRelease": "1980/06/10",
+    "tags": ["tag1", "tag2", "tag3"],
+    "title": "Dr Jekyll and Mr Hyde",
+    "description": "Breve descrizione del film, un bellissimo film, non andate al cinema"
+  },
+  {
+    "id": "2",
+    "poster": "https://picsum.photos/200/250",
+    "dateRelease": "2019/03/20",
+    "tags": ["tag1", "tag2", "tag3"],
+    "title": "Star wars",
+    "description": "Breve descrizione del film, un bellissimo film, non andate al cinema"
+  },
+  {
+    "id": "3",
+    "poster": "https://picsum.photos/200/250",
+    "dateRelease": "2009/01/25",
+    "tags": ["tag1", "tag2", "tag3"],
+    "title": "Il signore degli anelli",
+    "description": "Breve descrizione del film, un bellissimo film, non andate al cinema"
+  },
+  {
+    "id": "4",
+    "poster": "https://picsum.photos/200/250",
+    "dateRelease": "1999/06/11",
+    "tags": ["tag1", "tag2", "tag3"],
+    "title": "Spiderman",
+    "description": "Breve descrizione del film, un bellissimo film, non andate al cinema"
+  },
+  {
+    "id": "5",
+    "poster": "https://picsum.photos/200/250",
+    "dateRelease": "2010/04/01",
+    "tags": ["tag1", "tag2", "tag3"],
+    "title": "Superman",
+    "description": "Breve descrizione del film, un bellissimo film, non andate al cinema"
+  },
+  {
+    "id": "6",
+    "poster": "https://picsum.photos/200/250",
+    "dateRelease": "2004/03/30",
+    "tags": ["tag1", "tag2", "tag3"],
+    "title": "Batman",
+    "description": "Breve descrizione del film, un bellissimo film, non andate al cinema"
+  }
+]
